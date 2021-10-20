@@ -17,10 +17,10 @@ class lastfm(Music_service):
         self.network = pylast.LastFMNetwork(
             api_key=self.API_KEY,
             api_secret=self.API_SECRET,
-            username=self.username,
+            username=self.user_name,
             password_hash=self.password_hash,
         )
-        self.user = self.network.get_user(self.username)
+        self.user = self.network.get_user(self.user_name)
     
     def user_name(self):
         return self.user_name
