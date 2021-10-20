@@ -1,9 +1,9 @@
 import spotipy
 import arrow
 from dateutil import tz
-from Music_service import Music_service
+from .music_service import Music_service
 
-from utils import convert_ms
+from .utils import convert_ms
 
 class Spotify(Music_service):
   def __init__(self, token):
