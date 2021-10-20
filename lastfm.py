@@ -3,7 +3,7 @@ import pylast
 import calendar
 import datetime as dt
 
-from music_service import Music_service
+from .music_service import Music_service
 
 class lastfm(Music_service):
     def __init__(self):
@@ -11,7 +11,7 @@ class lastfm(Music_service):
         self.API_KEY = "e64588b7955f4fb940fb3cd3b11de6ad"
         self.API_SECRET = "a078c0fe139bde012830f0fb0576131f"
 
-        self.username = "eyelashwash"
+        self.user_name = "eyelashwash"
         self.password_hash = pylast.md5("eyelashwash1!")
 
         self.network = pylast.LastFMNetwork(
