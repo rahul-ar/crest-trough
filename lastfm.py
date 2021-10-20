@@ -3,7 +3,7 @@ import pylast
 import calendar
 import datetime as dt
 
-from Music_service import Music_service
+from music_service import Music_service
 
 class lastfm(Music_service):
     def __init__(self):
