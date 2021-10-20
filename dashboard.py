@@ -8,6 +8,15 @@ bp = Blueprint('/dashboard', __name__)
 def dashboard():
   sp = utils.Spotify(session["token"])
   g.user = sp.user_name()
-  g.play_times = sp.play_times()
-  print(g.user)
+  # g.play_times = sp.play_times()
   return render_template("dashboard.html")
+
+@bp.route('/dashboard/top_artists')
+def top_artists():
+  sp = utils.Spotify(session['token'])
+  return sp.top_artists()
+
+@bp.route('/dashboard/top_tracks')
+def top_tracks():
+  sp = utils.Spotify(session['token'])
+  return sp.top_tracks()

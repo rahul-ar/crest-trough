@@ -33,8 +33,9 @@ class Spotify():
     if day_play_time == 0:
       day_play_time = "You have not listened"
     day_play_time = convert_ms(day_play_time)
-  def top_artists(self):
-    pass
 
-  def top_albums(self):
-    pass
+  def top_artists(self):
+    return self.sp.current_user_top_artists(limit=5, offset=0, time_range='medium_term')
+
+  def top_tracks(self):
+    return self.sp.current_user_top_tracks(limit=10, offset=0, time_range='medium_term')
