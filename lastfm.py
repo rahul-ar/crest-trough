@@ -3,8 +3,11 @@ import pylast
 import calendar
 import datetime as dt
 
-class lastfm:
+from Music_service import Music_service
+
+class lastfm(Music_service):
     def __init__(self):
+        self.service_name = "Last.fm"
         self.API_KEY = "e64588b7955f4fb940fb3cd3b11de6ad"
         self.API_SECRET = "a078c0fe139bde012830f0fb0576131f"
 
@@ -35,7 +38,11 @@ class lastfm:
         albums = self.user.get_top_albums()
         return albums
 
-    def daytimes(self, year, month, day):
+    def top_tracks(self):
+        tracks = self.user.get_top_tracks()
+        return tracks
+
+    def play_times(self, year, month, day):
         start = dt.datetime(year, month, day, 0, 0)
         end = dt.datetime(year, month, day, 23, 59)
 
