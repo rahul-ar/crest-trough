@@ -22,6 +22,9 @@ class lastfm(Music_service):
         )
         self.user = self.network.get_user(self.username)
     
+    def user_name(self):
+        return self.user_name
+    
     def like(self, artist="Iron Maiden", title="The Nomad"):
         track = self.network.get_track(artist, title)
         track.love()
@@ -32,6 +35,7 @@ class lastfm(Music_service):
     
     def top_artists(self):
         artists = self.user.get_top_artists()
+        artists = [item[0].get_name() for item in artists]
         return artists
 
     def top_albums(self):
