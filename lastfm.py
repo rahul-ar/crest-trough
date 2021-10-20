@@ -11,19 +11,19 @@ class lastfm(Music_service):
         self.API_KEY = "e64588b7955f4fb940fb3cd3b11de6ad"
         self.API_SECRET = "a078c0fe139bde012830f0fb0576131f"
 
-        self.user_name = "eyelashwash"
+        self.username = "eyelashwash"
         self.password_hash = pylast.md5("eyelashwash1!")
 
         self.network = pylast.LastFMNetwork(
             api_key=self.API_KEY,
             api_secret=self.API_SECRET,
-            username=self.user_name,
+            username=self.username,
             password_hash=self.password_hash,
         )
-        self.user = self.network.get_user(self.user_name)
+        self.user = self.network.get_user(self.username)
     
     def user_name(self):
-        return self.user_name
+        return self.username
     
     def like(self, artist="Iron Maiden", title="The Nomad"):
         track = self.network.get_track(artist, title)
