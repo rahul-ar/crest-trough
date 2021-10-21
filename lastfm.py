@@ -44,6 +44,7 @@ class lastfm(Music_service):
 
     def top_tracks(self):
         tracks = self.user.get_top_tracks()
+        tracks = [item[0].get_name() for item in tracks]
         return tracks
 
     def play_times(self, year, month, day):
